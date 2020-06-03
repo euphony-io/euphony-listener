@@ -7,8 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 import co.jbear.euphony_listener.R;
+import euphony.lib.receiver.EuRxManager;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,19 +20,15 @@ import co.jbear.euphony_listener.R;
  */
 public class ToneFragment extends Fragment {
 
+    TextView freqView = null;
+    TextView freqStatusView = null;
+
+    EuRxManager mRxManager = new EuRxManager();
+
     public ToneFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ToneFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ToneFragment newInstance(String param1, String param2) {
         ToneFragment fragment = new ToneFragment();
         Bundle args = new Bundle();
@@ -48,6 +47,18 @@ public class ToneFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_tone, container, false);
+
+        freqView = v.findViewById(R.id.frequency_view);
+        freqStatusView = v.findViewById(R.id.frequency_status);
+
+        Button listenBtn = v.findViewById(R.id.tone_listen_btn);
+        listenBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
         return v;
     }
 }
