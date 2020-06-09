@@ -8,22 +8,24 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import co.jbear.euphony_listener.R;
 import euphony.lib.receiver.EuRxManager;
+import euphony.lib.receiver.FrequencyDetector;
+import euphony.lib.util.EuOption;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ToneFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class ToneFragment extends Fragment {
 
     TextView freqView = null;
     TextView freqStatusView = null;
+    SeekBar mFrequencySeekBar = null;
+    Button mListenBtn = null;
+    boolean isListenBtnClicked = false;
 
-    EuRxManager mRxManager = new EuRxManager();
+    EuRxManager mRxManager = null;
 
     public ToneFragment() {
         // Required empty public constructor
@@ -39,23 +41,72 @@ public class ToneFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
+        EuOption option = new EuOption();
+        option.setCommunicationMode(EuOption.CommunicationMode.DETECT);
+
+        mRxManager = new EuRxManager(option);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View v = inflater.inflate(R.layout.fragment_tone, container, false);
 
         freqView = v.findViewById(R.id.frequency_view);
         freqStatusView = v.findViewById(R.id.frequency_status);
 
-        Button listenBtn = v.findViewById(R.id.tone_listen_btn);
-        listenBtn.setOnClickListener(new View.OnClickListener() {
+        mRxManager.setFrequencyDetector(new FrequencyDetector() {
+            @Override
+            public void detect(float amplitude) {
+                String dBspl = Double.toString(20 * Math.log10(amplitude / 0.00002));
+                freqView.setText(amplitude + "dBspl");
+            }
+        });
+
+        mFrequencySeekBar = v.findViewById(R.id.frequencyBar);
+        mFrequencySeekBar.incrementProgressBy(10);
+        mFrequencySeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                freqStatusView.setText("" + progress + "hz");
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                if(isListenBtnClicked) {
+                    switch (mRxManager.getStatus()) {
+                        case RUNNING:
+                            mRxManager.setFrequencyForDetect(seekBar.getProgress());
+                            break;
+                        case STOP:
+                            mRxManager.listen(seekBar.getProgress());
+                            break;
+                    }
+                }
+            }
+        });
+
+        freqStatusView.setText("" + mFrequencySeekBar.getProgress() + "hz");
+
+        mListenBtn = v.findViewById(R.id.tone_listen_btn);
+        mListenBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                isListenBtnClicked ^= true;
+                if(isListenBtnClicked) {
+                    mListenBtn.setText("STOP");
+                    mRxManager.listen(mFrequencySeekBar.getProgress());
+                }
+                else {
+                    mListenBtn.setText("START");
+                    mRxManager.finish();
+                }
             }
         });
 

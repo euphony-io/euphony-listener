@@ -11,18 +11,29 @@
         android:id="@+id/frequency_status"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="30dp"
+        android:gravity="center"
         app:layout_constraintBottom_toTopOf="@id/frequency_view"
         />
     <TextView
         android:id="@+id/frequency_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30dp"
+        android:textSize="40dp"
+        android:gravity="center"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         />
+
+    <SeekBar
+        android:id="@+id/frequencyBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="22050"
+        android:progress="18000"
+        app:layout_constraintBottom_toTopOf="@id/tone_listen_btn"/>
 
     <Button
         android:id="@+id/tone_listen_btn"
@@ -30,4 +41,5 @@
         android:layout_height="wrap_content"
         android:text="Listen"
         app:layout_constraintBottom_toBottomOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
