@@ -6,7 +6,7 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "co.jbear.euphony_listener"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -33,7 +33,7 @@ dependencies {
     implementation 'com.google.android.material:material:1.2.0-alpha02'
 
 
-    def nav_version = "2.2.2"
+    def nav_version = "2.3.0"
     // Java
     implementation "androidx.navigation:navigation-fragment:$nav_version"
     implementation "androidx.navigation:navigation-ui:$nav_version"

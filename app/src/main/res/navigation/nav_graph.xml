@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_mainFragment_to_messageFragment"
             app:destination="@id/messageFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_APICallFragment"
+            app:destination="@id/APICallFragment" />
     </fragment>
     <fragment
         android:id="@+id/messageFragment"
@@ -27,4 +30,9 @@
         android:name="co.jbear.euphony_listener.fragments.ToneFragment"
         android:label="fragment_tone"
         tools:layout="@layout/fragment_tone" />
+    <fragment
+        android:id="@+id/APICallFragment"
+        android:name="co.jbear.euphony_listener.fragments.APICallFragment"
+        android:label="fragment_api_call"
+        tools:layout="@layout/fragment_api_call" />
 </navigation>

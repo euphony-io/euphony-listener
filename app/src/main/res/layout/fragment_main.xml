@@ -31,6 +31,14 @@
         android:text="Message Receiver"
         app:layout_constraintTop_toBottomOf="@id/tone_generator_btn"/>
 
+    <Button
+        android:id="@+id/api_call_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="API CALL TEST"
+        app:layout_constraintTop_toBottomOf="@id/msg_receiver_btn"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

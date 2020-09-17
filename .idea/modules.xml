@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1350864309/euphony.iml" filepath="$PROJECT_DIR$/.idea/modules/-1350864309/euphony.iml" group="euphony-listener/euphony" />
       <module fileurl="file://$PROJECT_DIR$/euphony-listener.iml" filepath="$PROJECT_DIR$/euphony-listener.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/euphony-listener-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/euphony-listener-app.iml" group="euphony-listener/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-265019758/euphony-listener-euphony.iml" filepath="$PROJECT_DIR$/.idea/modules/-265019758/euphony-listener-euphony.iml" group="euphony-listener/euphony" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/openspace-euphony-listener.iml" filepath="$PROJECT_DIR$/.idea/modules/openspace-euphony-listener.iml" group="euphony-listener" />
     </modules>
   </component>
