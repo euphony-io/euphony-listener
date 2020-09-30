@@ -1,6 +1,5 @@
 include ':app'
 rootProject.name='euphony-listener'
 
-gradle.ext.language = "java" // or kotlin
 include ':euphony'
-project (":euphony").projectDir = new File(rootProject.projectDir, "../euphony/project")
+project (":euphony").projectDir = new File(rootProject.projectDir, "../euphony/Euphony")
