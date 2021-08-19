@@ -62,7 +62,7 @@ It is automatically recognized when devices with developer mode are connected.</
 ​
 Operate 'euphony-listener' app on the connected device.</p>
 ![run](https://user-images.githubusercontent.com/47289893/128968893-cca8c520-4dcc-41e7-9e04-9d4849143176.png)</br>
-![run-build](https://user-images.githubusercontent.com/47289893/128969518-043e50ae-aa45-4d0a-b145-9e7d1176353c.png</br>
+![run-build](https://user-images.githubusercontent.com/47289893/128969518-043e50ae-aa45-4d0a-b145-9e7d1176353c.png)</br>
 ​
 #### Speaker
 ​
