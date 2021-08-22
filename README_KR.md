@@ -1,5 +1,10 @@
 # euphony-listener
 ​
+​**version 1.0.0** 🌏 (
+[English](https://github.com/euphony-io/euphony-listener/blob/master/README.md), 
+[한국어](https://github.com/euphony-io/euphony-listener/blob/master/README_KR.md)
+)
+
 ## 소개
 ​
 Euphony-Listener는 Speaker로부터 음파를 통해 데이터를 받아 인식하는 기능을 합니다.</br>
@@ -16,8 +21,8 @@ Euphony는 마이크와 녹음기를 활용하여 다른 단말기(안드로이�
 ​
 ## 전제 조건
 ​
-**build.gradle**
-```java
+앱 모듈의 build.gradle </br>
+```gradle
 dependencies {
     implementation 'euphony.lib:euphony:0.7.1.6'
 }
@@ -85,7 +90,7 @@ LISTEN 버튼을 누르면 인식이 시작된다.</p>
 ```java
 EuRxManager mRxManager = new EuRxManager();
 mRxManager.setAcousticSensor(new AcousticSensor() {
-@Override
+    @Override
     public void notify(String letters) {
         // 데이터가 수신되었을 때의 동작
     }

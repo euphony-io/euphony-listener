@@ -1,5 +1,10 @@
 # euphony-listener
 ​
+​**version 1.0.0** 🌏 (
+[English](https://github.com/euphony-io/euphony-listener/blob/master/README.md), 
+[한국어](https://github.com/euphony-io/euphony-listener/blob/master/README_KR.md)
+)
+
 ## Introduction
 ​
 'Euphony-Listener' receives and recognizes data through sound waves from 'Speaker'. </br>
@@ -16,7 +21,7 @@ Official Library Site : https://dev.jbear.co/euphony </br>
 ​
 ## Prerequisite
 build.gradle in app module </br>
-```java
+```gradle
 dependencies {
     implementation 'euphony.lib:euphony:0.7.1.6'
 }
@@ -83,7 +88,7 @@ When the 'LISTEN' button is pressed, recognition begins.</p>
 ```java
 EuRxManager mRxManager = new EuRxManager();
 mRxManager.setAcousticSensor(new AcousticSensor() {
-@Override
+    @Override
     public void notify(String letters) {
         //when data is received
     }
