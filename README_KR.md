@@ -1,7 +1,7 @@
 # euphony-listener
 ​
 ​**version 1.0.0** 🌏 (
-[English](https://github.com/euphony-io/euphony-listener/blob/master/README.md), 
+[English](https://github.com/euphony-io/euphony-listener/blob/master/README.md),
 [한국어](https://github.com/euphony-io/euphony-listener/blob/master/README_KR.md)
 )
 
@@ -28,7 +28,7 @@ dependencies {
 }
 ```
 ​
-**AndroidManifest.xml**
+AndroidManifest.xml
 ```xml
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 ```
@@ -106,4 +106,4 @@ mRxManager.listen();  // listening 시작
 여러분의 개선 사항을 특정 branch로 만들고 master로 pull을 요청해주세요.
 
 ## 라이센스
-Euphony는 Apache 2.0 license를 따릅니다. (https://github.com/designe/Euphony/blob/master/LICENSE)
+Euphony는 Apache 2.0 license를 따릅니다. (https://github.com/euphony-io/euphony-listener/blob/master/LICENSE)

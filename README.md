@@ -1,7 +1,7 @@
 # euphony-listener
 ​
 ​**version 1.0.0** 🌏 (
-[English](https://github.com/euphony-io/euphony-listener/blob/master/README.md), 
+[English](https://github.com/euphony-io/euphony-listener/blob/master/README.md),
 [한국어](https://github.com/euphony-io/euphony-listener/blob/master/README_KR.md)
 )
 
@@ -104,4 +104,4 @@ Changes and improvements are more than welcome! Feel Free to fork and open a pul
 ​
 ## License
 ​
-Euphony is licensed under the Apache 2.0 license. (https://github.com/designe/Euphony/blob/master/LICENSE)
+Euphony is licensed under the Apache 2.0 license. (https://github.com/euphony-io/euphony-listener/blob/master/LICENSE)
