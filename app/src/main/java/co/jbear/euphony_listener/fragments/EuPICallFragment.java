@@ -15,7 +15,7 @@ import co.euphony.rx.EuRxManager;
 import co.euphony.util.EuSetting;
 import co.jbear.euphony_listener.R;
 
-public class APICallFragment extends Fragment {
+public class EuPICallFragment extends Fragment {
 
     int api_1_count = 0;
     int api_2_count = 0;
@@ -25,12 +25,12 @@ public class APICallFragment extends Fragment {
 
 
     EuRxManager mRxManager = null;
-    public APICallFragment() {
+    public EuPICallFragment() {
         // Required empty public constructor
     }
 
-    public static APICallFragment newInstance() {
-        return new APICallFragment();
+    public static EuPICallFragment newInstance() {
+        return new EuPICallFragment();
     }
 
     @Override
