@@ -6,17 +6,11 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
-import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
-
-import euphony.lib.receiver.AcousticSensor;
-import euphony.lib.receiver.EuRxManager;
 
 public class MainActivity extends AppCompatActivity {
 

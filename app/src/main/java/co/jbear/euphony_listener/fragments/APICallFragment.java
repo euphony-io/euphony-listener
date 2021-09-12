@@ -10,16 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import co.euphony.rx.EuPICallDetector;
+import co.euphony.rx.EuRxManager;
+import co.euphony.util.EuSetting;
 import co.jbear.euphony_listener.R;
-import euphony.lib.receiver.APICallDetector;
-import euphony.lib.receiver.EuRxManager;
-import euphony.lib.util.EuOption;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link APICallFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 
 public class APICallFragment extends Fragment {
 
@@ -35,17 +29,14 @@ public class APICallFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static APICallFragment newInstance(String param1, String param2) {
-        APICallFragment fragment = new APICallFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
+    public static APICallFragment newInstance() {
+        return new APICallFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mRxManager = new EuRxManager(EuOption.CommunicationMode.API);
+        mRxManager = new EuRxManager(EuSetting.ModeType.EUPI);
     }
 
     @Override
@@ -78,7 +69,7 @@ public class APICallFragment extends Fragment {
         API_2_COUNT = v.findViewById(R.id.frequency_count_2);
         API_3_COUNT = v.findViewById(R.id.frequency_count_3);
 
-        mRxManager.setOnWaveKeyPressed(18500, new APICallDetector() {
+        mRxManager.setOnWaveKeyPressed(18500, new EuPICallDetector() {
             @Override
             public void call() {
                 api_1_count++;
@@ -86,7 +77,7 @@ public class APICallFragment extends Fragment {
             }
         });
 
-        mRxManager.setOnWaveKeyPressed(19000, new APICallDetector() {
+        mRxManager.setOnWaveKeyDown(19000, new EuPICallDetector() {
             @Override
             public void call() {
                 api_2_count++;
@@ -94,7 +85,7 @@ public class APICallFragment extends Fragment {
             }
         });
 
-        mRxManager.setOnWaveKeyUp(20113, new APICallDetector() {
+        mRxManager.setOnWaveKeyUp(20000, new EuPICallDetector() {
             @Override
             public void call() {
                 api_3_count++;
