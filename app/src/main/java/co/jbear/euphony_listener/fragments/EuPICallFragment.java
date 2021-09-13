@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import co.euphony.rx.EuPICallDetector;
 import co.euphony.rx.EuRxManager;
-import co.euphony.util.EuSetting;
+import co.euphony.util.EuOption;
 import co.jbear.euphony_listener.R;
 
 public class EuPICallFragment extends Fragment {
@@ -36,7 +36,7 @@ public class EuPICallFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mRxManager = new EuRxManager(EuSetting.ModeType.EUPI);
+        mRxManager = new EuRxManager(EuOption.ModeType.EUPI);
     }
 
     @Override

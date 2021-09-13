@@ -14,7 +14,6 @@ import android.widget.TextView;
 import co.euphony.rx.EuRxManager;
 import co.euphony.rx.FrequencyDetector;
 import co.euphony.util.EuOption;
-import co.euphony.util.EuSetting;
 import co.jbear.euphony_listener.R;
 
 
@@ -52,7 +51,7 @@ public class ToneFragment extends Fragment {
         //EuOption option = new EuOption();
         //option.setMode(EuOption.CommunicationMode.DETECT);
 
-        mRxManager = new EuRxManager(EuSetting.ModeType.DETECT);
+        mRxManager = new EuRxManager(EuOption.ModeType.DETECT);
     }
 
     @Override
