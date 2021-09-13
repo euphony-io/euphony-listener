@@ -11,10 +11,10 @@ import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import co.euphony.rx.EuRxManager;
+import co.euphony.rx.FrequencyDetector;
+import co.euphony.util.EuOption;
 import co.jbear.euphony_listener.R;
-import euphony.lib.receiver.EuRxManager;
-import euphony.lib.receiver.FrequencyDetector;
-import euphony.lib.util.EuOption;
 
 
 public class ToneFragment extends Fragment {
@@ -41,10 +41,17 @@ public class ToneFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EuOption option = new EuOption();
-        option.setCommunicationMode(EuOption.CommunicationMode.DETECT);
 
-        mRxManager = new EuRxManager(option);
+        /*
+        EuSetting setting = EuSetting.builder()
+                .encodingWith(EuSetting.CodingType.BASE16)
+                .modeWith(EuSetting.ModeType.DETECT)
+                .build();
+                */
+        //EuOption option = new EuOption();
+        //option.setMode(EuOption.CommunicationMode.DETECT);
+
+        mRxManager = new EuRxManager(EuOption.ModeType.DETECT);
     }
 
     @Override

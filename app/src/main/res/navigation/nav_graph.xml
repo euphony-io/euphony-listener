@@ -32,7 +32,7 @@
         tools:layout="@layout/fragment_tone" />
     <fragment
         android:id="@+id/APICallFragment"
-        android:name="co.jbear.euphony_listener.fragments.APICallFragment"
+        android:name="co.jbear.euphony_listener.fragments.EuPICallFragment"
         android:label="fragment_api_call"
         tools:layout="@layout/fragment_api_call" />
 </navigation>

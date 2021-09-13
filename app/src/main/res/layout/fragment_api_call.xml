@@ -5,7 +5,7 @@
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.APICallFragment">
+    tools:context=".fragments.EuPICallFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,7 +22,7 @@
             android:textSize="40dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:text="API 18500"
+            android:text="EuPI 18500"
             />
         <TextView
             android:id="@+id/frequency_count_1"
@@ -41,7 +41,7 @@
             android:textSize="40dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:text="API 19000"
+            android:text="EuPI 19000"
             />
         <TextView
             android:id="@+id/frequency_count_2"
@@ -60,7 +60,7 @@
             android:textSize="40dp"
             android:gravity="center"
             android:textAlignment="center"
-            android:text="API 20000"
+            android:text="EuPI 20000"
             />
         <TextView
             android:id="@+id/frequency_count_3"

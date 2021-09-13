@@ -1,22 +1,18 @@
 package co.jbear.euphony_listener.fragments;
 
-import android.Manifest;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.os.Bundle;
-
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import co.euphony.rx.AcousticSensor;
+import co.euphony.rx.EuRxManager;
 import co.jbear.euphony_listener.R;
-import euphony.lib.receiver.AcousticSensor;
-import euphony.lib.receiver.EuRxManager;
+
 
 public class MessageFragment extends Fragment {
 
@@ -32,18 +28,13 @@ public class MessageFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static MessageFragment newInstance(String param1, String param2) {
-        MessageFragment fragment = new MessageFragment();
-        Bundle args = new Bundle();
-        fragment.setArguments(args);
-        return fragment;
+    public static MessageFragment newInstance() {
+        return new MessageFragment();
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-        }
     }
 
     @Override
